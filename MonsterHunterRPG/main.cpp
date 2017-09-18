@@ -1181,6 +1181,14 @@ bool loadMedia()
 	return success;
 }
 
+void close()
+{
+	Mix_FreeMusic(gMusic);
+
+	Mix_Quit();
+	SDL_Quit();
+}
+
 int main()
 {
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
@@ -1207,5 +1215,6 @@ int main()
 		cin >> doo;
 	}
 
+	close();
 	return 0;
 }
